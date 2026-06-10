@@ -1,17 +1,20 @@
+
+
 # DETECÇÃO DE ANOMALIAS EM TRANSAÇÕES COM PYTHON - MACHINE LEARNING 
 
-Este projeto foi desenvolvido com o propósito de analisar conjuntos de dados e identificar padrões atípicos, desvios ou comportamentos suspeitos (outliers) que fujam da normalidade estabelecida no histórico dos dados.
+## Resumo Executivo
 
-O dataset utilizado contém transações de cartão de crédito do Kaggle.
-
-URL: https://storage.googleapis.com/download.tensorflow.org/data/creditcard.csv
-
+Este projeto desenvolveu uma esteira modularizada e profissional de Data Science para detecção de fraudes em cartões de crédito sob um cenário de desbalanceamento extremo (~0.17% de fraudes). Após aplicar a Feature Engineering (transformação logarítmica e escalonamento) com blindagem rigorosa contra vazamento de dados (Data Leakage), foram testados e comparados os algoritmos Random Forest e XGBoost. A solução campeã foi o XGBoost com Threshold ajustado em 0.3, que alcançou o melhor equilíbrio para o negócio ao capturar 83% das fraudes reais (Recall) com uma assertividade de 87% nos alarmes disparados (Precision), reduzindo custos com fraudes e evitando o bloqueio indevido de clientes legítimos.
 
 ## Objetivo
 
 O principal objetivo deste projeto é implementar e avaliar algoritmos de Aprendizado de Máquina (Machine Learning) focados na identificação automatizada de anomalias. 
 
 O foco técnico está em modelar o comportamento "padrão" do sistema para que qualquer variação estatisticamente irrelevante ou maliciosa dispare alertas precisos sem a necessidade de uma rotulagem manual exaustiva.
+
+O dataset utilizado contém transações de cartão de crédito do Kaggle.
+
+URL: https://storage.googleapis.com/download.tensorflow.org/data/creditcard.csv
 
 ##  Dificuldades Encontradas
 
@@ -46,3 +49,4 @@ XGBoost Ajustado (Threshold = 0.3) : Aproveitando a alta precisão que o XGBoost
 Ao exportarmos a função de importância das variáveis, o modelo revelou que a tomada de decisão não acontece ao acaso. O gráfico de barras indicou que variáveis específicas (como o forte pico observado na feature V14 e em outros componentes latentes) são os principais sinalizadores de anomalias.
 
 Isso significa que o XGBoost conseguiu correlacionar padrões ocultos nessas variáveis que um analista humano dificilmente detectaria visualmente em uma planilha.
+
